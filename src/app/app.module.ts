@@ -8,7 +8,7 @@ import { SignupComponent } from './signup/signup.component';
 import { RouterModule } from '@angular/router';
 import { AudiComponent } from './audi/audi.component';
 import { CreateorderComponent } from './createorder/createorder.component';
-
+import { HttpClientModule }    from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,14 +20,15 @@ import { CreateorderComponent } from './createorder/createorder.component';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     AppRoutingModule,
 
     RouterModule.forRoot([
-     {path:"",pathMatch:"full",redirectTo:'Audi/signup'},
-     {path:'Audi',component:AudiComponent,
-     children:[
+     {path:"",pathMatch:"full",redirectTo:'login'},
      {path:'login',component:LoginComponent},
      {path:'signup',component:SignupComponent},
+     {path:'Audi',component:AudiComponent,
+     children:[
      {path:'createorder',component:CreateorderComponent}
     ]},
     

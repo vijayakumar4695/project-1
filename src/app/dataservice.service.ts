@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import{HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
+import swal from 'sweetalert';
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +11,18 @@ export class DataserviceService {
 
   constructor(private http:HttpClient) { }
 
-  regData(data){
-    return this.http.post('',data)
-    .pipe(map(data=>this.check=data)) 
-    }
+  regData(value){
+  //  var obj={
+  //   status:'success'
+  //   }
+  //   return obj
+  // }
+  return this.http.post('',value).toPromise()
+  .then((data)=>{
+    (data)
+  })
+ } 
+    
     getData(){
       return this.http.get('')
       .pipe(map(data=>this.check=data))

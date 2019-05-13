@@ -4,7 +4,7 @@
 <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
   <br><br><br>
     <div class="card card-signup">
-      <form class="form" method="" action="">
+      <form class="form" name="login" #login="ngForm"  (ngSubmit)="onLogin(login.value)">
         <div class="header header-primary text-center">
           <h4 class="card-title">Log in</h4>
           <div class="social-line">
@@ -18,21 +18,42 @@
             <span class="input-group-addon">
               <i class="material-icons">face</i>
             </span>
-            <div class="form-group is-empty"><input type="text" class="form-control" placeholder="First Name..."><span class="material-input"></span></div>
+            <div class="form-group is-empty"><input type="text"  name="fname" #fname="ngModel" ngModel required  class="form-control" placeholder="First Name..." ><span class="material-input"></span></div>
+            <div *ngIf="fname.errors && (fname.touched|| fname.dirty)" class="alert text-light">
+                <div id="msg" [hidden]="!fname.errors.required">
+                    Name requried
+                </div>
+            </div>
           </div>
 
           <div class="input-group">
             <span class="input-group-addon">
               <i class="material-icons">email</i>
             </span>
-            <div class="form-group is-empty"><input type="text" class="form-control" placeholder="Email..."><span class="material-input"></span></div>
+            <div class="form-group is-empty"><input type="text"  name="Email" #Email="ngModel"  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" ngModel required  class="form-control" placeholder="Email..."><span class="material-input"></span></div>
+            <div *ngIf="Email.errors && (Email.touched|| Email.dirty)" class="alert text-light">
+                <div id="msg" [hidden]="!Email.errors.required">
+                    Emailid required
+                </div>
+                      <div id="msg" [hidden]="!Email.errors.pattern">
+                          Please enter valid email
+                     </div>                                                      
+             </div>
           </div>
 
           <div class="input-group">
             <span class="input-group-addon">
               <i class="material-icons">lock_outline</i>
             </span>
-            <div class="form-group is-empty"><input type="password" placeholder="Password..." class="form-control"><span class="material-input"></span></div>
+            <div class="form-group is-empty"><input type="password"  name="Password" #Password="ngModel" minlength="8" ngModel required  placeholder="Password..." class="form-control"><span class="material-input"></span></div>
+            <div *ngIf="Password.errors && (Password.touched|| Password.dirty)" class="alert text-light">
+                <div id="msg" [hidden]="!Password.errors.required">
+                    Password requried
+                </div>
+                      <div id="msg" [hidden]="!Password.errors.minlength">
+                         Please enter minimum 8 character
+                      </div>
+            </div>
           </div>
 
           <!-- If you want to add a checkbox to this form, uncomment this code
@@ -45,7 +66,10 @@
           </div> -->
         </div>
         <div class="footer text-center">
-          <button class="btn btn-rose btn-round">Login<div class="ripple-container"></div></button> 
+         <a routerLink="Audi/createorder"> <button class="btn btn-rose btn-round">Login<div class="ripple-container"></div></button></a>
+          <br>
+            <a routerLink="/signup"><p>(If u have a New User click me to signup)</p></a>
+          <br>
         </div>
       </form>
     </div>
