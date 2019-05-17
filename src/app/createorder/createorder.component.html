@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#pablo"> <img id="block" src="assets/img/580b585b2edbce24c47b2c18.png"></a>
+      <a class="navbar-brand" routerLink="/login"><h6><img id="block" src="assets/img/580b585b2edbce24c47b2c18.png">BLOCKORDER</h6></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -40,7 +40,7 @@
             <a href="#pablo">Settings and other stuff</a>
         </li>
         <li class="divider"></li>
-        <li><a href="#pablo">Sign out</a></li>
+        <li><a routerLink="/login">Sign out</a></li>
     </ul>
 </li>
 </ul>
@@ -54,25 +54,26 @@
   <br>
   <br>
   <br>
+  <form name="create" #create="ngForm" (ngSubmit)="createOrder(create.value)">
   <div class="row">
 <div class="col-lg-4 col-sm-3">
         <div class="form-group label-floating  is-empty">
             <label class="control-label">Product Name</label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" name="productname" #productname="ngModel" ngModel required>
         <span class="material-input"></span></div>
       </div>
 
 <div class="col-lg-4 col-sm-3">
 <div class="form-group label-floating is-empty">
     <label class="control-label">Quantity</label>
-  <input type="text" class="form-control">
+  <input type="text" class="form-control" name="quantity" #quantity="ngModel" ngModel required>
 <span class="material-input"></span></div>
 </div>
 
 <div class="col-lg-4 col-sm-3">
   <div class="form-group label-floating is-empty">
       <label class="control-label">Order Date</label>
-    <input type="date" class="form-control" required>
+    <input type="date" class="form-control" name="orderdate" #orederdate="ngModel" ngModel required>
   <span class="material-input"></span></div>
   </div>
  </div>
@@ -80,38 +81,35 @@
  <div class="row">
   <div class="col-lg-4 col-sm-3">
           <div class="form-group is-empty vendor">
-            <form>
-            <select type="text"   class="form-control">
-              <option>Vendor</option>
-              <option>MRF</option>
-              <option>BridgeStone</option>
+            <select type="text"   class="form-control" name="option" #option="ngModel" ngModel required>
+              <option value="Vendor">Vendor</option>
+              <option value="MRF">MRF</option>
+              <option value="BridgeStone">BridgeStone</option>
               </select>
-            </form>
-          <span class="material-input"></span></div>
-        </div>
+             <span class="material-input"></span></div>
+            </div>
   
   <div class="col-lg-4 col-sm-3">
   <div class="form-group label-floating is-empty">
-      <form>
-          <label class="control-label">Expected Delivery Date</label>
-        <input id="date" type="date" required class="form-control">
-     </form>
+  <label class="control-label">Expected Delivery Date</label>
+   <input type="date"  class="form-control" name="ExpectedDeliveryDate" #ExpectedDeliveryDate="ngModel" ngModel required>
   <span class="material-input"></span></div>
   </div>
   
   <div class="col-lg-4 col-sm-3">
     <div class="form-group label-floating is-empty">
-        <label class="control-label">Price</label>
-      <input type="text" class="form-control">
-    <span class="material-input"></span></div>
+      <label class="control-label">Price</label>
+      <input type="text" class="form-control" name="price" #price="ngModel" ngModel required>
+     <span class="material-input"></span></div>
+     </div>
     </div>
-   </div>
    <div class="col-md-4 col-md-offset-8">
      <br>
      <br>
-    <button class="btn btn-success">Create </button>
-    <button class="btn btn-danger">Cancel</button>
+    <button type="submit" class="btn btn-success">Create </button>
+    <a routerLink="/Audi/list"><button class="btn btn-danger">Cancel</button></a>
 </div>
+</form>
 </div>
  
 

@@ -9,13 +9,17 @@ import { RouterModule } from '@angular/router';
 import { AudiComponent } from './audi/audi.component';
 import { CreateorderComponent } from './createorder/createorder.component';
 import { HttpClientModule }    from '@angular/common/http';
+import { ListComponent } from './list/list.component';
+import { VieworderidComponent } from './vieworderid/vieworderid.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
     AudiComponent,
-    CreateorderComponent
+    CreateorderComponent,
+    ListComponent,
+    VieworderidComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +33,9 @@ import { HttpClientModule }    from '@angular/common/http';
      {path:'signup',component:SignupComponent},
      {path:'Audi',component:AudiComponent,
      children:[
-     {path:'createorder',component:CreateorderComponent}
+     {path:'createorder',component:CreateorderComponent},
+     {path:'list',component:ListComponent},
+     {path:'vieworderid/:id',component:VieworderidComponent}
     ]},
     
     ])

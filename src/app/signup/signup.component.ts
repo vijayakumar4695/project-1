@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { User } from './user';
 import {DataserviceService} from '../dataservice.service';
 import {Router} from '@angular/router';
-import swal from 'sweetalert';
 
 @Component({
   selector: 'app-signup',
@@ -27,18 +26,20 @@ export class SignupComponent implements OnInit {
   }
   onSignUp(value){
     console.log(value)
-    let data ={
-      email:"",
-      password:"",
-    }
-    this.message = 'Success';
-    swal("Message",this.message);
-      // this.dataservice.regData(res).status
-      // this.dataservice.regData(data).subscribe(res=>{
-      //   this.data1=res;
-      //   this.routing.navigate(['/login']);
-      //   console.log(res)
-      // })
+    // let data ={
+    //   fname:"",
+    //   email:"",
+    //   password:"",
+    // }
+    // this.message = 'Success';
+    // alert(this.message);
+    // this.routing.navigate(['/login'])
+      this.dataservice.regData(value).then(res=>{
+        this.data1=res;
+        alert("Register Successfully")
+        this.routing.navigate(['/login']);
+        console.log(res)
+      })
     }
    
   }

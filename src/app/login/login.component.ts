@@ -18,17 +18,18 @@ export class LoginComponent implements OnInit {
       console.log(res)
     })
   }
-  onSignUp(value){
+  onSignIn(value){
     for(let i=0;i<this.bind.length;i++){
-      if(value.email===this.bind[i].email){
-        if(value.pswd===this.bind[i].pswd){
-          this.routing.navigate(['/Audi']);
+    
+      if(value.Email===this.bind[i].Email){
+        if(value.Password===this.bind[i].Password){
+          this.routing.navigate(['/Audi/createorder']);
         }
         else{
-          alert("Password Wrong!");
+          alert("Password Wrong!")
         }
-      }
     }
+  }
   
  }
 

@@ -2337,8 +2337,6 @@ select.form-control[multiple], .form-group.is-focused select.form-control[multip
   height: 40px;
   line-height: 30px;
   color: inherit;
-  margin-right: 350px;
-  
 }
 .navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
   color: inherit;
@@ -2522,8 +2520,6 @@ select.form-control[multiple], .form-group.is-focused select.form-control[multip
 }
 #block{
 width:50px;
-
-
 }
 .navbar.navbar-inverse .navbar-form .form-group input.form-control::-moz-placeholder,
 .navbar.navbar-inverse .navbar-form input.form-control::-moz-placeholder {
@@ -3067,7 +3063,7 @@ h5, .h5 {
 h6, .h6 {
   font-size: 0.9em;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .title,
@@ -4341,10 +4337,9 @@ hr.on-light {
   max-width: 150px;
 }
 .table .td-price {
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 300;
   margin-top: 5px;
-  text-align: right;
 }
 .table .td-total {
   font-weight: 500;
@@ -5947,7 +5942,6 @@ select[data-dropdownjs][disabled] + .dropdownjs > input[readonly] {
   position: relative;
 }
 .features-5:after {
-  background: rgba(0, 0, 0, 0.55);
   position: absolute;
   width: 100%;
   height: 100%;
@@ -5963,7 +5957,7 @@ select[data-dropdownjs][disabled] + .dropdownjs > input[readonly] {
 }
 .features-5 .title,
 .features-5 .info-title {
-  color: #FFFFFF;
+  color: #000;
 }
 .features-5 .info {
   text-align: center;
@@ -5971,17 +5965,18 @@ select[data-dropdownjs][disabled] + .dropdownjs > input[readonly] {
   min-height: 320px;
 }
 .features-5 .info .icon {
-  color: #FFFFFF;
+  color: red;
 }
 .features-5 .info .icon > i {
   font-size: 2.8em;
 }
 .features-5 .info p {
-  color: #FFFFFF;
+  color: orangered;
   min-height: 120px;
+  font-size:20px;
 }
 .features-5 .container [class*="col-"] {
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  border: 1px solid olivedrab;
   border-top: 0;
 }
 .features-5 .container [class*="col-"] {
