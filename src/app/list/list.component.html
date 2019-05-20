@@ -68,7 +68,7 @@
           </thead>
               <tbody>
                 <tr *ngFor="let list of bind">
-                     <td (click)="viewpage(list.id)">{{list.id}}</td>
+                     <td id="one" data-tooltip="click to view order" (click)="viewpage(list.id)" title="">{{list.id}}</td>
                     <td>{{list.productname}}</td>
                     <td>{{list.quantity}}</td>
                     <td>{{list.orderdate}}</td>

@@ -36,7 +36,6 @@ export class SignupComponent implements OnInit {
     // this.routing.navigate(['/login'])
       this.dataservice.regData(value).then(res=>{
         this.data1=res;
-        alert("Register Successfully")
         this.routing.navigate(['/login']);
         console.log(res)
       })

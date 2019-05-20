@@ -1,0 +1,16 @@
+#one {
+    padding: 4px; 
+    color:red;
+    font-weight: bold;
+    position: relative;
+  }
+  
+  #one:hover:after {
+    content: attr(data-tooltip);
+    position: absolute;
+    background:black;
+    color:white;
+    padding: 4px;
+    border-radius:10px;
+    text-align: center;
+  }

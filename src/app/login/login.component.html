@@ -48,13 +48,13 @@
                 <img class="audiimag"src="assets/img/29748-2-audi-logo-with-transparent-background.png">
                </div>   
     
-              <form class="form" name="login" #login="ngForm" (ngSubmit)="onSignIn(login.value)">
+              <form   autocomplete="off" class="form" name="login" #login="ngForm" (ngSubmit)="onSignIn(login.value)">
                 <div class="card-content">
                   <div class="input-group">
                     <span class="input-group-addon">
                      <i class="material-icons">email</i>
                     </span>
-                    <div class="form-group is-empty"><input type="email" name="Email" #Email="ngModel"  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" ngModel required class="form-control" placeholder="Email..."><span class="material-input"></span></div>
+                    <div class="form-group is-empty"><input type="email"  autocomplete="off" name="Email" #Email="ngModel"  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" ngModel required class="form-control" placeholder="Email..."><span class="material-input"></span></div>
                     <div *ngIf="Email.errors && (Email.touched|| Email.dirty)" class="alert text-light">
                       <div id="msg" [hidden]="!Email.errors.required">
                             Emailid required
@@ -69,7 +69,7 @@
                     <span class="input-group-addon">
                       <i class="material-icons">lock_outline</i>
                     </span>
-                    <div class="form-group is-empty"><input type="password" name="Password" #Password="ngModel" minlength="8" ngModel required  placeholder="Password..."  class="form-control"><span class="material-input"></span></div>
+                    <div class="form-group is-empty"><input type="password"  autocomplete="off" name="Password" #Password="ngModel" minlength="8" ngModel required  placeholder="Password..."  class="form-control"><span class="material-input"></span></div>
                     <div *ngIf="Password.errors && (Password.touched|| Password.dirty)" class="alert text-light">
                         <div id="msg" [hidden]="!Password.errors.required">
                             Password requried
@@ -90,10 +90,10 @@
                   </div>
                 </div>
                 <div class="text-center">
-                 <button type="submit"  class="btn btn-primary btn-round"  [disabled]="!login.form.valid ">Login</button>
-                 <br>
-                 <a routerLink="/signup"><p>(If u have a New User click me to signup)</p></a>
-                <br>
+                 <button type="submit"  class="btn btn-primary btn-round"  [disabled]="!login.form.valid ">Sign in</button>
+                 <br><br>
+                 <a routerLink="/signup"><p id="account">Don't have an account? Login now!</p></a>
+                
                 </div>
               </form>
               </div>

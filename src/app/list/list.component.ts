@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DataserviceService} from '../dataservice.service';
 import {Router} from '@angular/router';
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -15,6 +16,7 @@ export class ListComponent implements OnInit {
   qu:any;
   total:any;
   p:any;
+  
   constructor(public dataservice:DataserviceService,private routing:Router) { }
 
   ngOnInit() {
@@ -44,7 +46,6 @@ export class ListComponent implements OnInit {
      this.get();
    })
    this.erase=value
-   alert("Deleted Successfully")
    console.log(value.id)
  }
 
