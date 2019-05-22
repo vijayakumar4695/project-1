@@ -30,7 +30,7 @@ export class DataserviceService {
     }
     
 
-   createodr(value){
+   createOdr(value){
     return this.http.post('https://5cc8890e2dcd9d0014769060.mockapi.io/api/v1/createorder',value).toPromise()
     .then((data)=>{
       resolve(data)

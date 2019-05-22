@@ -50,8 +50,10 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div class="container">
+  <br><br><br><br><br><br><br>
   <div class="text-right">
     <a routerLink="/Audi/createorder" class="btn btn-rose btn-round">Createorder</a></div>
+    <br>
   <div class="table-responsive">
     <table class="table">
         <thead>
@@ -74,19 +76,9 @@
                     <td>{{list.orderdate}}</td>
                     <td>{{list.option}}</td>
                     <td>{{list.price}}</td>
-                    <td>{{list.price}}</td>
+                    <td>{{list.quantity*list.price}}</td>
                     <td><button class="btn btn-sm btn-danger"><i class="material-icons" (click)="del(list)">close</i></button></td>
                 </tr>
-                <tr>
-                    <td colspan="5"></td>
-                    <td class="td-total">
-                        Total
-                    </td>
-                    <td class="td-price">
-                        {{this.total}}
-                   </td>
-                   </tr>
-                 
               </tbody> 
              </table>
              </div>

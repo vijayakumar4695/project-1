@@ -2713,6 +2713,8 @@ width:50px;
   background-color: #e91e63;
   color: #ffffff;
   box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(233, 30, 99, 0.46);
+  position:fixed;
+  z-index: 1030;
 }
 .navbar.navbar-rose .navbar-form .form-group input.form-control::-moz-placeholder,
 .navbar.navbar-rose .navbar-form input.form-control::-moz-placeholder {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DataserviceService} from '../dataservice.service';
 import {Router} from '@angular/router';
-
+import swal from 'sweetalert2';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -26,7 +26,13 @@ export class LoginComponent implements OnInit {
           this.routing.navigate(['/Audi/createorder']);
         }
         else{
-          alert("Password Wrong!")
+          swal.fire({
+            title: 'passward mismatch!',
+            text: "please type correct password",
+            type: 'warning',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'ok'
+          }); 
         }
     }
   }
