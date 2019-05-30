@@ -8,7 +8,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" routerLink="/login"><p id="viewhead" ><img id="block" src="assets/img/580b585b2edbce24c47b2c18.png">BLOCKORDER</p></a>
+        <a class="navbar-brand" routerLink="/login"><p id="viewhead" ><img id="block" src="assets/img/audi-filled.png">BLOCKORDER</p></a>
       </div>
   
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -24,26 +24,23 @@
           <a href="#pablo">NW</a>
       </li>
       <li class="dropdown">
-          <a href="#pablo" class="profile-photo dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-          <div class="profile-photo-small">
-             &nbsp;  <img src="assets/img/logo.png" alt="Circle Image" class="img-circle img-responsive">
-    </div>
+        <a href="#pablo" class="profile-photo dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+         <div class="profile-photo-small">
+       <img src="assets/img/logo.png" alt="Circle Image" class="img-circle img-responsive">
+       </div>
       <div class="ripple-container"></div></a>
       <ul class="dropdown-menu">
-          <li class="dropdown-header">
-              Dropdown header
+          <li>
+            <a href="#pablo">Me<div class="ripple-container"></div></a>
           </li>
           <li>
-              <a href="#pablo">Me<div class="ripple-container"></div></a>
-          </li>
-          <li>
-              <a href="#pablo">Settings and other stuff</a>
+            <a href="#pablo">Settings and other stuff</a>
           </li>
           <li class="divider"></li>
           <li><a routerLink="/login">Sign out</a></li>
-     </ul>
-        </li>
-  </ul>
+         </ul>
+         </li>
+         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
@@ -102,7 +99,7 @@
 				<div class="col-sm-4">
 					<div class="info">
 						<div class="icon">
-                         <i class="far fa-calendar"></i>
+             <i class="far fa-calendar"></i>
 						</div>
 						<h4 class="info-title">Order Date</h4>
 						<p>{{result.orderdate}} </p>
@@ -133,9 +130,17 @@
           <br>
         <div class="col-lg-6"></div>
         <div class="col-lg-2 text-center">
-            <a routerLink="/Audi/list" class="btn btn-rose btn-round">Back</a></div>
+          <button class="btn btn-rose btn-round" (click)="back()">Back</button>
           </div>
         </div>
     </div>
-   
+    <ngx-spinner
+    bdColor="rgba(51,51,51,0.8)"
+    size="medium"
+    color="#fff"
+    type="ball-scale-multiple">
+   <p style="font-size: 20px; color: white">Loading...</p>
+  </ngx-spinner>
+  
+    
 	

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {DataserviceService} from '../dataservice.service';
 import { Route ,ActivatedRoute} from '@angular/router';
+import {Router} from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-vieworderid',
   templateUrl: './vieworderid.component.html',
@@ -21,13 +24,22 @@ export class VieworderidComponent implements OnInit {
     
   }
 
-  constructor(public routing:ActivatedRoute,public service:DataserviceService) { }
+  constructor(public routing:ActivatedRoute,public service:DataserviceService,private spinner: NgxSpinnerService,private route:Router) { }
 
   ngOnInit() {
     this.id=this.routing.snapshot.params['id'];
     console.log(this.id)
-      this.service.getOrder().subscribe(res=>{
-        this.bind=res;
+       this.service.getOrder().subscribe(res=>{
+         this.bind=res['data']
+         console.log(this.bind)
+         Swal.fire({
+          type:'success',
+          text:res['status']
+        })
+       
+       
+      // this.service.getOrder().subscribe(res=>{
+      //   this.bind=res;
        for(let i=0;i<this.bind.length;i++){
        if(this.id===this.bind[i].id){
 
@@ -40,7 +52,14 @@ export class VieworderidComponent implements OnInit {
         this.result.ExpectedDeliveryDate=this.bind[i].ExpectedDeliveryDate
      
        }
+       
       }
-      })
+    })  
+      
   }
+  back(){
+    this.spinner.show();
+    this.route.navigate(['/Audi/list'])
+     this.spinner.hide();
+  } 
 }

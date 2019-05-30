@@ -11,6 +11,9 @@ import { CreateorderComponent } from './createorder/createorder.component';
 import { HttpClientModule }    from '@angular/common/http';
 import { ListComponent } from './list/list.component';
 import { VieworderidComponent } from './vieworderid/vieworderid.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { UpdateComponent } from './update/update.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,13 +22,15 @@ import { VieworderidComponent } from './vieworderid/vieworderid.component';
     AudiComponent,
     CreateorderComponent,
     ListComponent,
-    VieworderidComponent
+    VieworderidComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
+    NgxSpinnerModule,
 
     RouterModule.forRoot([
      {path:"",pathMatch:"full",redirectTo:'login'},
@@ -35,7 +40,8 @@ import { VieworderidComponent } from './vieworderid/vieworderid.component';
      children:[
      {path:'createorder',component:CreateorderComponent},
      {path:'list',component:ListComponent},
-     {path:'vieworderid/:id',component:VieworderidComponent}
+     {path:'vieworderid/:id',component:VieworderidComponent},
+     {path:'update/:id',component:UpdateComponent}
     ]},
     
     ])

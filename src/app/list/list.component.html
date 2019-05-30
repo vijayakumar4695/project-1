@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" routerLink="/login"><h6><img id="block" src="assets/img/580b585b2edbce24c47b2c18.png">BLOCKOREDER</h6></a>
+      <a class="navbar-brand" routerLink="/login"><h6><img id="block" src="assets/img/audi-filled.png">BLOCKOREDER</h6></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -26,13 +26,10 @@
   <li class="dropdown">
     <a href="#pablo" class="profile-photo dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
         <div class="profile-photo-small">
-           &nbsp;  <img src="assets/img/logo.png" alt="Circle Image" class="img-circle img-responsive">
+            <img src="assets/img/logo.png" alt="Circle Image" class="img-circle img-responsive">
         </div>
     <div class="ripple-container"></div></a>
     <ul class="dropdown-menu">
-        <li class="dropdown-header">
-            Dropdown header
-        </li>
         <li>
             <a href="#pablo">Me<div class="ripple-container"></div></a>
         </li>
@@ -42,8 +39,8 @@
         <li class="divider"></li>
         <li><a routerLink="/login">Sign out</a></li>
     </ul>
-</li>
-</ul>
+    </li>
+    </ul>
      
 
     </div><!-- /.navbar-collapse -->
@@ -52,10 +49,10 @@
 <div class="container">
   <br><br><br><br><br><br><br>
   <div class="text-right">
-    <a routerLink="/Audi/createorder" class="btn btn-rose btn-round">Createorder</a></div>
+   <button class="btn btn-rose btn-round "(click)="ctchange(value)">Createorder</button></div>
     <br>
-  <div class="table-responsive">
-    <table class="table">
+    <div class="table-responsive">
+     <table class="table">
         <thead>
             <tr>
                 <th>OrderID</th>
@@ -65,21 +62,30 @@
                 <th>Vendor</th>
                 <th>Price</th>
                 <th>Total</th>
-                <th>Action</th>
+                <th class="text-right">Actions</th>
             </tr>
           </thead>
               <tbody>
-                <tr *ngFor="let list of bind">
-                     <td id="one" data-tooltip="click to view order" (click)="viewpage(list.id)" title="">{{list.id}}</td>
+                <tr *ngFor="let list of bind;let i=index">
+                     <td id="one" data-tooltip="click to view order" routerLink='/Audi/vieworderid/{{list.id}}' title="">{{i+1}}</td>
                     <td>{{list.productname}}</td>
                     <td>{{list.quantity}}</td>
                     <td>{{list.orderdate}}</td>
                     <td>{{list.option}}</td>
                     <td>{{list.price}}</td>
                     <td>{{list.quantity*list.price}}</td>
-                    <td><button class="btn btn-sm btn-danger"><i class="material-icons" (click)="del(list)">close</i></button></td>
+                    <td><button class="btn btn-sm btn-danger"><i class="material-icons" (click)="del(list.id)">close</i></button></td>
+                    <td><button type="button" rel="tooltip" class="btn btn-sm btn-success" data-original-title="" title="" routerLink="/Audi/update/{{list.id}}"> <i class="material-icons">edit</i> </button></td>
+                 
                 </tr>
               </tbody> 
-             </table>
+            </table>
              </div>
              </div>
+       <ngx-spinner
+        bdColor="rgba(51,51,51,0.8)"
+        size="medium"
+        color="#fff"
+        type="ball-scale-multiple">
+       <p style="font-size: 20px; color: white">Loading...</p>
+      </ngx-spinner>

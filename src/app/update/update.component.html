@@ -56,31 +56,32 @@
   <form  autocomplete="off" name="create" #create="ngForm">
   <div class="row">
 <div class="col-lg-4 col-md-4 col-sm-3">
-        <div class="form-group label-floating  is-empty">
+        <div class="form-group">
            <label class="control-label">Product Name</label>
-          <input type="text" autocomplete="off" class="form-control" name="productname" #productname="ngModel" ngModel required>
+          <input type="text" autocomplete="off" class="form-control" name="productname" [(ngModel)]='bindData.productname' required>
         <span class="material-input"></span></div>
       </div>
 
 <div class="col-lg-4 col-md-4 col-sm-3">
-   <div class="form-group label-floating is-empty">
+   <div class="form-group">
     <label class="control-label">Quantity</label>
-   <input type="text" autocomplete="off" class="form-control" name="quantity" #quantity="ngModel" ngModel required>
+   <input type="text" autocomplete="off" class="form-control" name="quantity"  [(ngModel)]='bindData.quantity' required>
    <span class="material-input"></span></div>
 </div>
 
 <div class="col-lg-4 col-md-4 col-sm-3">
-    <div class="form-group label-floating is-empty">
+    <div class="form-group">
     <label class="control-label">Order Date</label>
-    <input type="date" autocomplete="off" class="form-control" name="orderdate" #orederdate="ngModel" ngModel required>
+    <input type="date" autocomplete="off" class="form-control" name="orderdate" [(ngModel)]='bindData.orderdate' required>
     <span class="material-input"></span></div>
   </div>
  </div>
 
  <div class="row">
   <div class="col-lg-4 col-md-4 col-sm-3">
-          <div class="form-group is-empty vendor">
-            <select type="text"   class="form-control" name="option" #option="ngModel" ngModel required>
+          <div class="form-group">
+              <label class="control-label">vendor</label>
+            <select type="text"   class="form-control" name="option"  [(ngModel)]='bindData.option' required>
               <option value="" disabled selected>Vendor</option>
               <option value="MRF">MRF</option>
               <option value="BridgeStone">BridgeStone</option>
@@ -89,23 +90,23 @@
   </div>
   
   <div class="col-lg-4 col-md-4 col-sm-3">
-  <div class="form-group label-floating is-empty">
+  <div class="form-group">
   <label class="control-label">Expected Delivery Date</label>
-   <input type="date" autocomplete="off" class="form-control" name="ExpectedDeliveryDate" #ExpectedDeliveryDate="ngModel"  ngModel required>
+   <input type="date" autocomplete="off" class="form-control" name="ExpectedDeliveryDate" [(ngModel)]='bindData.ExpectedDeliveryDate' required>
   <span class="material-input"></span></div>
   </div>
   
   <div class="col-lg-4 col-md-4 col-sm-3">
-    <div class="form-group label-floating is-empty">
+    <div class="form-group">
       <label class="control-label">Price</label>
-      <input type="text" autocomplete="off" class="form-control" name="price" #price="ngModel" ngModel required>
+      <input type="text" autocomplete="off" class="form-control" name="price" [(ngModel)]='bindData.price' required>
      <span class="material-input"></span></div>
      </div>
     </div>
    <div class="col-md-4 col-md-offset-8">
      <br>
      <br>
-    <button type="submit" class="btn btn-success" (click)='createOrder(create.value)'>Create </button>
+    <button type="submit" class="btn btn-success" (click)='update(value)'>update </button>
     <button class="btn btn-danger" (click)="list()">Cancel</button>
 </div>
 </form>
@@ -117,7 +118,3 @@
         type="ball-scale-multiple">
        <p style="font-size: 20px; color: white">Loading...</p>
 </ngx-spinner>
- 
-
-     
-
