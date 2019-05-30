@@ -1100,6 +1100,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .navbar .navbar-nav > li > a.btn.btn-sm, .btn-group-sm
 .navbar .navbar-nav > li > a.btn {
   padding: 5px 20px;
+  
   font-size: 11px;
 }
 .btn.btn-xs, .btn-group-xs .btn,
