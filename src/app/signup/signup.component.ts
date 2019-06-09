@@ -34,7 +34,7 @@ export class SignupComponent implements OnInit {
       type:'success',
       text: res['status'],
     })
-    this.routing.navigate(['/login']);
+    this.routing.navigate(['/Audi/login']);
     console.log(res);
   })
    

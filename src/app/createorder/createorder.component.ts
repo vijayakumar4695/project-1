@@ -3,6 +3,7 @@ import {DataserviceService} from '../dataservice.service';
 import {Router} from '@angular/router';
 import swal from 'sweetalert2';
 import { NgxSpinnerService } from 'ngx-spinner';
+
 @Component({
   selector: 'app-createorder',
   templateUrl: './createorder.component.html',
@@ -14,6 +15,7 @@ export class CreateorderComponent implements OnInit {
 
   ngOnInit() {
   }
+ 
   createOrder(value){
     this.spinner.show();
      this.dataservice.createOdr(value).subscribe(res=>{
@@ -22,7 +24,7 @@ export class CreateorderComponent implements OnInit {
         type:'success',
         text: res['status'],
       })
-       this.routing.navigate(['Audi/list']);
+       this.routing.navigate(['/Audi/order/list']);
       console.log(res);
      })
    
@@ -49,10 +51,12 @@ export class CreateorderComponent implements OnInit {
   }
   list(){
     this.spinner.show(); 
-    setTimeout(() => { 
-    this.routing.navigate(['/Audi/list']);
+    this.routing.navigate(['/Audi/order/list']);
     this.spinner.hide();
-  }, 1000);
   }
+  
 
 }
+
+
+

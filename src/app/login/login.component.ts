@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
         text: res['status'],
       })
     console.log(res)
-      this.routing.navigate(['/Audi/createorder']);
+      this.routing.navigate(['/Audi/order/list']);
     })
 }
 }

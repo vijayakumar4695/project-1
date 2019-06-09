@@ -57,7 +57,7 @@
                     <div class="form-group is-empty"><input type="email"  autocomplete="off" name="Email" #Email="ngModel"  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" ngModel required class="form-control" placeholder="Email..."><span class="material-input"></span></div>
                     <div *ngIf="Email.errors && (Email.touched|| Email.dirty)" class="alert text-light">
                       <div id="msg" [hidden]="!Email.errors.required">
-                            Emailid required
+                            Email required
                       </div>
                         <div id="msg" [hidden]="!Email.errors.pattern">
                                   Please enter valid email
@@ -87,10 +87,9 @@
                   </div>
                 </div>
                 <div class="text-center">
-                 <button type="submit"  class="btn btn-primary btn-round"  [disabled]="!login.form.valid ">Sign in</button>
+                 <button type="submit"  class="btn btn-info btn-round"  [disabled]="!login.form.valid ">Sign in</button>
                  <br><br>
-                 <a routerLink="/signup"><p id="account">Don't have an account? Login now!</p></a>
-                
+                 <a routerLink="/Audi/signup"><p id="account">Don't have an account? Login now!</p></a>
                 </div>
               </form>
               </div>

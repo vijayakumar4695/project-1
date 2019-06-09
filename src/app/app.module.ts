@@ -13,6 +13,11 @@ import { ListComponent } from './list/list.component';
 import { VieworderidComponent } from './vieworderid/vieworderid.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { UpdateComponent } from './update/update.component';
+import { OrderComponent } from './order/order.component';
+import { InvoiceComponent } from './invoice/invoice.component';
+import { CreateComponent } from './create/create.component';
+import { InvoiceListComponent } from './invoice-list/invoice-list.component';
+import { InvoiceviewComponent } from './invoiceview/invoiceview.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +28,12 @@ import { UpdateComponent } from './update/update.component';
     CreateorderComponent,
     ListComponent,
     VieworderidComponent,
-    UpdateComponent
+    UpdateComponent,
+    OrderComponent,
+    InvoiceComponent,
+    CreateComponent,
+    InvoiceListComponent,
+    InvoiceviewComponent
   ],
   imports: [
     BrowserModule,
@@ -34,15 +44,25 @@ import { UpdateComponent } from './update/update.component';
 
     RouterModule.forRoot([
      {path:"",pathMatch:"full",redirectTo:'login'},
-     {path:'login',component:LoginComponent},
-     {path:'signup',component:SignupComponent},
      {path:'Audi',component:AudiComponent,
      children:[
-     {path:'createorder',component:CreateorderComponent},
-     {path:'list',component:ListComponent},
-     {path:'vieworderid/:id',component:VieworderidComponent},
-     {path:'update/:id',component:UpdateComponent}
-    ]},
+      {path:'login',component:LoginComponent},
+      {path:'signup',component:SignupComponent},
+      {path:'createorder',component:CreateorderComponent},
+      {path:'order',component:OrderComponent,
+      children:[
+      {path:'list',component:ListComponent},
+      {path:'vieworderid/:id',component:VieworderidComponent},
+      {path:'update/:id',component:UpdateComponent}
+      ]},
+      {path:'invoice',component:InvoiceComponent,
+     children:[
+      {path:'create',component:CreateComponent},
+      {path:'invoicelist',component: InvoiceListComponent},
+      {path:'invoiceview/:id',component: InvoiceviewComponent},
+      ]}
+     ]}
+  
     
     ])
   ],

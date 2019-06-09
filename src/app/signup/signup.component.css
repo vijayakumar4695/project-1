@@ -3,13 +3,14 @@
 }
 #account{
     color:#337ab7;
+    font-weight: 500;
 }
 input[type="text"]{
-    color:white;
+    color:black;
 }
 input[type="email"]{
-    color:white;
+    color:black;
 }
 input[type="password"]{
-    color:white;
+    color:black;
 }

@@ -1,5 +1,5 @@
-<nav class="navbar navbar-rose">
-  <div class="container-fluid">
+<nav class="navbar navbar">
+  <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" routerLink="/login"><h6><img id="block" src="assets/img/audi-filled.png">BLOCKORDER</h6></a>
+      <a class="navbar-brand" routerLink="/Audi/login"><h6 id="blockorder"><img id="block" src="assets/img/audi-filled.png">BLOCKORDER</h6></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -16,33 +16,27 @@
 
 <ul class="nav navbar-nav" >
 <li>
-<a href="/Audi/createorder">Order</a>
+<a routerLink="/Audi/createorder">Order</a>
 </li>
  <li>
-<a>Invoices</a>
+<a routerLink="/Audi/createorder">Invoices</a>
 </li>
 <li>
-  <a>NW</a>
+  <a routerLink="/Audi/createorder">NW</a>
   </li>
   <li class="dropdown">
     <a href="#pablo" class="profile-photo dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
         <div class="profile-photo-small">
          <img src="assets/img/logo.png" alt="Circle Image" class="img-circle img-responsive">
-        </div>
+</div>
     <div class="ripple-container" ></div></a>
     
     <ul class="dropdown-menu">
-        <li>
-            <a href="#pablo">me<div class="ripple-container"></div></a>
-        </li>
-        <li>
-            <a href="#pablo">Settings and other stuff</a>
-        </li>
         <li class="divider"></li>
-        <li><a routerLink="/login">Sign out</a></li>
-     </ul>
-     </li>
+        <li><a routerLink="/Audi/login">Sign out</a></li>
     </ul>
+  </li>
+</ul>
 
      
 
@@ -107,7 +101,7 @@
      <br>
      <br>
     <button type="submit" class="btn btn-success" (click)='update(value)'>update </button>
-    <button class="btn btn-danger" routerLink="/Audi/list">Cancel</button>
+    <button class="btn btn-danger" routerLink="/Audi/order/list">Cancel</button>
 </div>
 </form>
 </div>

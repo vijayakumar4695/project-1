@@ -654,7 +654,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .navbar .navbar-nav > li > a.btn.btn-rose.dropdown-toggle, .open >
 .navbar .navbar-nav > li > a.btn.btn-rose.dropdown-toggle:focus, .open >
 .navbar .navbar-nav > li > a.btn.btn-rose.dropdown-toggle:hover {
-  background-color: #e91e63;
+  background-color: #0887d1;
   color: #FFFFFF;
 }
 .btn.btn-rose:focus, .btn.btn-rose:active, .btn.btn-rose:hover,
@@ -1247,7 +1247,7 @@ fieldset[disabled] .form-group.is-focused .checkbox label {
   display: inline-block;
   width: 20px;
   height: 20px;
-  border: 1px solid white;
+  border: 1px solid black;
   overflow: hidden;
   z-index: 1;
   border-radius: 3px;
@@ -1709,6 +1709,7 @@ output {
   .form-horizontal .control-label {
     padding-top: 8px;
   }
+ 
   
 }
 @media (min-width: 768px) {
@@ -2331,7 +2332,7 @@ select.form-control[multiple], .form-group.is-focused select.form-control[multip
   border: 0;
   width:100%;
   border-radius: 3px;
-  padding: 10px 0;
+ 
 }
 .navbar .navbar-brand {
   position: relative;
@@ -2352,8 +2353,8 @@ select.form-control[multiple], .form-group.is-focused select.form-control[multip
   color: inherit;
   padding-top: 15px;
   padding-bottom: 10px;
-  font-weight: 400;
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 18px;
   text-transform: uppercase;
   border-radius: 3px;
   margin:15px;
@@ -2480,7 +2481,7 @@ select.form-control[multiple], .form-group.is-focused select.form-control[multip
   line-height: 1.42857;
 }
 .navbar, .navbar.navbar-default {
-  background-color: #FFFFFF;
+  background-color:#0887d1;
   color: #555555;
   box-shadow: 0 4px 18px 0px rgba(0, 0, 0, 0.12), 0 7px 10px -5px rgba(0, 0, 0, 0.15);
 }
@@ -2779,7 +2780,9 @@ width:50px;
   z-index: 3;
   transition: all 0.3s;
 }
-
+#head{
+  float:center;
+}
 .nav-align-center {
   text-align: center;
 }
@@ -3086,7 +3089,7 @@ h6, .h6 {
 .footer-big h4 a,
 .media .media-heading,
 .media .media-heading a {
-  color: white;
+  color: black;
   text-decoration: none;
 }
 
@@ -3307,7 +3310,7 @@ h2.title {
   margin-bottom: 30px;
   border-radius: 6px;
   color: rgba(0,0,0, 0.87);
-  background:black;
+  background:white;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 .card .card-height-indicator {
@@ -4265,11 +4268,11 @@ hr.on-light {
   font-size: 4.4em;
 }
 .info .info-title {
-  color:white;
+  color:black;
   margin: 30px 0 15px;
 }
 .info p {
-  color: #999999;
+  color: black;
 }
 
 .info-horizontal .icon {
@@ -8304,7 +8307,7 @@ select.selectpicker {
     margin-top: 0;
   }
   .navbar .navbar-collapse .navbar-nav > li > a {
-    color: #3C4858;
+    color: black;
     margin: 5px 15px;
   }
   .navbar .navbar-collapse .navbar-nav > li > a:hover, .navbar .navbar-collapse .navbar-nav > li > a:focus {

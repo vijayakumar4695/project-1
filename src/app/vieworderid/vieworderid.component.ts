@@ -12,7 +12,6 @@ import Swal from 'sweetalert2';
 export class VieworderidComponent implements OnInit {
   id:any;
   bind:any;
-  totalAmount:any=[];
   result:any={
     OrderID:'',
     productname:'',
@@ -43,8 +42,8 @@ export class VieworderidComponent implements OnInit {
        for(let i=0;i<this.bind.length;i++){
        if(this.id===this.bind[i].id){
 
-         this.result.OrderID=this.bind[i].id
-         this.result.productname=this.bind[i].productname
+        this.result.OrderID=this.bind[i].id
+        this.result.productname=this.bind[i].productname
         this.result.quantity=this.bind[i].quantity
         this.result.option=this.bind[i].option
         this.result.orderdate=this.bind[i].orderdate
@@ -59,7 +58,7 @@ export class VieworderidComponent implements OnInit {
   }
   back(){
     this.spinner.show();
-    this.route.navigate(['/Audi/list'])
+    this.route.navigate(['/Audi/order/list'])
      this.spinner.hide();
   } 
 }

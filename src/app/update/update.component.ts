@@ -55,10 +55,10 @@ export class UpdateComponent implements OnInit {
       text:res['status']
     })
     if(res['status']='Updated successfully'){
-      this.route.navigate(['/Audi/list'])
+      this.route.navigate(['/Audi/order/list'])
     }
     else{
-      this.route.navigate(['/Audi/update'])
+      this.route.navigate(['/Audi/order/update'])
     }
     })
   }

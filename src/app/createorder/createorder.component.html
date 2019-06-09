@@ -1,5 +1,5 @@
-<nav class="navbar navbar-rose">
-  <div class="container-fluid">
+<nav class="navbar navbar">
+  <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" routerLink="/login"><h6><img id="block" src="assets/img/audi-filled.png">BLOCKORDER</h6></a>
+      <a class="navbar-brand" routerLink="/Audi/login"><h6 id="blockorder"><img id="block" src="assets/img/audi-filled.png">BLOCKORDER</h6></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -19,27 +19,21 @@
 <a routerLink="/Audi/createorder">Order</a>
 </li>
  <li>
-<a>Invoices</a>
+<a routerLink="/Audi/createorder">Invoices</a>
 </li>
 <li>
-  <a>NW</a>
-  </li>
+<a routerLink="/Audi/createorder">NW</a>
+</li>
   <li class="dropdown">
     <a href="#pablo" class="profile-photo dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-        <div class="profile-photo-small">
-         <img src="assets/img/logo.png" alt="Circle Image" class="img-circle img-responsive">
-        </div>
-    <div class="ripple-container" ></div></a>
+      <div class="profile-photo-small">
+       <img src="assets/img/logo.png" alt="Circle Image" class="img-circle img-responsive">
+      </div>
+     <div class="ripple-container" ></div></a>
     
     <ul class="dropdown-menu">
-        <li>
-            <a href="#pablo">me<div class="ripple-container"></div></a>
-        </li>
-        <li>
-            <a href="#pablo">Settings and other stuff</a>
-        </li>
         <li class="divider"></li>
-        <li><a routerLink="/login">Sign out</a></li>
+        <li><a routerLink="/Audi/login">Sign out</a></li>
      </ul>
      </li>
     </ul>
@@ -55,12 +49,12 @@
   <br><br><br><br><br><br><br><br>
   <form  autocomplete="off" name="create" #create="ngForm">
   <div class="row">
-<div class="col-lg-4 col-md-4 col-sm-3">
-        <div class="form-group label-floating  is-empty">
-           <label class="control-label">Product Name</label>
-          <input type="text" autocomplete="off" class="form-control" name="productname" #productname="ngModel" ngModel required>
-        <span class="material-input"></span></div>
-      </div>
+  <div class="col-lg-4 col-md-4 col-sm-3">
+    <div class="form-group label-floating  is-empty">
+     <label class="control-label">Product Name</label>
+      <input type="text" autocomplete="off" class="form-control" name="productname" #productname="ngModel" ngModel required>
+      <span class="material-input"></span></div>
+ </div>
 
 <div class="col-lg-4 col-md-4 col-sm-3">
    <div class="form-group label-floating is-empty">
@@ -72,31 +66,32 @@
 <div class="col-lg-4 col-md-4 col-sm-3">
     <div class="form-group label-floating is-empty">
     <label class="control-label">Order Date</label>
-    <input type="date" autocomplete="off" class="form-control" name="orderdate" #orederdate="ngModel" ngModel required>
+    <input type="date"  class="form-control"  name="orderdate" #orederdate="ngModel" ngModel required>
     <span class="material-input"></span></div>
   </div>
  </div>
 
  <div class="row">
   <div class="col-lg-4 col-md-4 col-sm-3">
-          <div class="form-group is-empty vendor">
-            <select type="text"   class="form-control" name="option" #option="ngModel" ngModel required>
-              <option value="" disabled selected>Vendor</option>
-              <option value="MRF">MRF</option>
-              <option value="BridgeStone">BridgeStone</option>
-              </select>
-              <span class="material-input"></span></div>
+    <div class="form-group is-empty vendor">
+       <select type="text"   class="form-control" name="option" #option="ngModel" ngModel required>
+        <option value="" disabled selected>Vendor</option>
+         <option value="MRF">MRF</option>
+          <option value="BridgeStone">BridgeStone</option>
+        </select>
+      <span class="material-input"></span></div>
   </div>
   
   <div class="col-lg-4 col-md-4 col-sm-3">
+     
   <div class="form-group label-floating is-empty">
   <label class="control-label">Expected Delivery Date</label>
-   <input type="date" autocomplete="off" class="form-control" name="ExpectedDeliveryDate" #ExpectedDeliveryDate="ngModel"  ngModel required>
+   <input type="date"  class="form-control " name="ExpectedDeliveryDate" #ExpectedDeliveryDate="ngModel"  ngModel required>
   <span class="material-input"></span></div>
   </div>
   
   <div class="col-lg-4 col-md-4 col-sm-3">
-    <div class="form-group label-floating is-empty">
+      <div class="form-group label-floating is-empty">
       <label class="control-label">Price</label>
       <input type="text" autocomplete="off" class="form-control" name="price" #price="ngModel" ngModel required>
      <span class="material-input"></span></div>
@@ -107,9 +102,9 @@
      <br>
     <button type="submit" class="btn btn-success" (click)='createOrder(create.value)'>Create </button>
     <button class="btn btn-danger" (click)="list()">Cancel</button>
-</div>
-</form>
-</div>
+   </div>
+  </form>
+  </div>
 <ngx-spinner
         bdColor="rgba(51,51,51,0.8)"
         size="medium"

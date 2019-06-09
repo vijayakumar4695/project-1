@@ -55,7 +55,13 @@ export class DataserviceService {
     return this.http.post('https://ordermanagements.herokuapp.com/orders/update',value)
   }
 
-
-
+   createinvoice(value){
+     return this.http.post('https://5cfb7901765d4500141fbfc3.mockapi.io/api/v1/Audiorder',value)
+     .pipe(map(data=>this.check=data))
+   }
+   getInvoice(){
+    return this.http.get('https://5cfb7901765d4500141fbfc3.mockapi.io/api/v1/Audiorder')
+    .pipe(map(data=>this.check=data))
+  }
 
 }
